@@ -29,6 +29,6 @@ export const environment = {
   devTools: {
     enableReduxDevTools: true,
     enableConsoleLogging: true,
-    showPerformanceMetrics: false
+    showPerformanceMetrics: true
   }
 };
