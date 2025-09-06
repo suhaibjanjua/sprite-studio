@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-user" viewBox="0 0 16 16">
+    <circle cx="8" cy="6" r="4" fill="#8F8F94"/>
+    <rect x="2" y="12" width="12" height="2" fill="#8F8F94"/>
+  </symbol>
+  <symbol id="icon-settings" viewBox="0 0 16 16">
+    <circle cx="8" cy="8" r="6" fill="#8F8F94"/>
+    <rect x="7" y="2" width="2" height="12" fill="#8F8F94"/>
+  </symbol>
+</svg>
