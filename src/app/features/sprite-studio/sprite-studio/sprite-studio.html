@@ -1,5 +1,94 @@
-<div style="padding: 24px;">
-  <app-upload-form (fileSelected)="onFileSelected($event)" (urlEntered)="onUrlEntered($event)"></app-upload-form>
-  <app-icon-toggle (modeChanged)="onModeChanged($event)"></app-icon-toggle>
-  <app-sprite-viewer-grid [icons]="icons()" [viewMode]="viewMode()"></app-sprite-viewer-grid>
+<div class="sprite-studio-container">
+  <!-- Header Section -->
+  <mat-toolbar color="primary" class="header-toolbar">
+    <mat-icon class="header-icon">dashboard</mat-icon>
+    <span class="header-title">SpriteStudio</span>
+    <span class="spacer"></span>
+    <span class="header-subtitle">Professional SVG Sprite Viewer & Manager</span>
+  </mat-toolbar>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <!-- Upload Section -->
+    <mat-card class="upload-section" elevation="3">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>cloud_upload</mat-icon>
+          Import SVG Sprite
+        </mat-card-title>
+        <mat-card-subtitle>Upload a file or provide a URL to get started</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <app-upload-form 
+          (fileSelected)="onFileSelected($event)" 
+          (urlEntered)="onUrlEntered($event)">
+        </app-upload-form>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Controls Section -->
+    <div class="controls-section">
+      <div class="view-controls">
+        <mat-card class="controls-card" elevation="2">
+          <mat-card-content>
+            <div class="controls-header">
+              <mat-icon>tune</mat-icon>
+              <span>View Options</span>
+            </div>
+            <app-icon-toggle 
+              (modeChanged)="onModeChanged($event)"
+              [currentMode]="viewMode()">
+            </app-icon-toggle>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Stats Display -->
+      <div class="stats-section" *ngIf="icons() && icons().length > 0">
+        <mat-card class="stats-card" elevation="2">
+          <mat-card-content>
+            <div class="stats-row">
+              <mat-icon>photo_library</mat-icon>
+              <span class="stats-label">Total Icons:</span>
+              <span class="stats-value">{{ icons().length }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Sprite Viewer Section -->
+    <mat-card class="viewer-section" elevation="3" *ngIf="icons() && icons().length > 0">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>grid_view</mat-icon>
+          Sprite Icons
+        </mat-card-title>
+        <mat-card-subtitle>{{ viewMode() === 'fixed' ? 'Fixed Size View (36x36px)' : 'Actual Size View' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="viewer-content">
+        <app-sprite-viewer-grid 
+          [icons]="icons()" 
+          [viewMode]="viewMode()">
+        </app-sprite-viewer-grid>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Welcome Section (when no icons loaded) -->
+    <mat-card class="welcome-section" elevation="2" *ngIf="!icons() || icons().length === 0">
+      <mat-card-content>
+        <div class="welcome-content">
+          <mat-icon class="welcome-icon">image</mat-icon>
+          <h2>Welcome to SpriteStudio</h2>
+          <p>Upload an SVG sprite file or enter a URL to start viewing and managing your sprite icons.</p>
+          <div class="demo-note">
+            <mat-icon>info</mat-icon>
+            <span>Demo icons are already loaded for you to explore!</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </div>
