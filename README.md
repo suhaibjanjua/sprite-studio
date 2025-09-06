@@ -94,14 +94,14 @@ npm run lint      # Run ESLint
 src/
 ├── app/
 │   ├── features/sprite-studio/    # Main feature module
-│   │   ├── components/           # Atomic components
-│   │   ├── services/            # Business logic
-│   │   ├── store/              # NgRx state management
-│   │   └── sprite-studio/      # Main container
-│   ├── shared/                 # Shared utilities
-│   └── core/                  # Core services
-├── environments/              # Environment configs
-└── styles.scss               # Global styles
+│   │   ├── components/            # Atomic components
+│   │   ├── services/              # Business logic
+│   │   ├── store/                 # NgRx state management
+│   │   └── sprite-studio/         # Main container
+│   ├── shared/                    # Shared utilities
+│   └── core/                      # Core services
+├── environments/                  # Environment configs
+└── styles.scss                    # Global styles
 ```
 
 ### Code Standards
