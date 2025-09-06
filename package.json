@@ -1,6 +1,6 @@
 {
   "name": "sprite-studio",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A modern, professional SVG sprite viewer and management tool built with Angular 19",
   "keywords": [
     "angular",

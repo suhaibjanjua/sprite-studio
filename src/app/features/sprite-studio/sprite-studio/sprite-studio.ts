@@ -17,6 +17,7 @@ import { UploadForm } from '../components/upload-form/upload-form';
 import { IconToggle } from '../components/icon-toggle/icon-toggle';
 import { SpriteViewerGrid } from '../components/sprite-viewer-grid/sprite-viewer-grid';
 import { PerformanceDashboard } from '../components/performance-dashboard/performance-dashboard';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-sprite-studio',
@@ -38,6 +39,7 @@ import { PerformanceDashboard } from '../components/performance-dashboard/perfor
 export class SpriteStudio {
   icons;
   viewMode;
+  showPerformanceMetrics = environment.devTools?.showPerformanceMetrics || false;
 
   constructor(
     private parser: SpriteParserService, 

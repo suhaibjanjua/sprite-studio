@@ -91,7 +91,7 @@
     </mat-card>
 
     <!-- Performance Dashboard (Development Only) -->
-    <app-performance-dashboard></app-performance-dashboard>
+    <app-performance-dashboard *ngIf="showPerformanceMetrics"></app-performance-dashboard>
 
   </div>
 </div>
