@@ -1,1 +1,304 @@
-/* SpriteStudio feature styles */
+.sprite-studio-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  
+  .header-toolbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    .header-icon {
+      margin-right: 12px;
+      font-size: 24px;
+    }
+    
+    .header-title {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .spacer {
+      flex: 1 1 auto;
+    }
+    
+    .header-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+  }
+  
+  .main-content {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .upload-section {
+      margin-bottom: 24px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      
+      mat-card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        margin: -16px -16px 16px -16px;
+        padding: 16px;
+        border-radius: 12px 12px 0 0;
+        
+        mat-card-title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 20px;
+          font-weight: 600;
+          margin: 0;
+          
+          mat-icon {
+            font-size: 24px;
+          }
+        }
+        
+        mat-card-subtitle {
+          color: rgba(255, 255, 255, 0.8);
+          margin: 4px 0 0 0;
+        }
+      }
+    }
+    
+    .controls-section {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      
+      .view-controls {
+        flex: 1;
+      }
+      
+      .controls-card, .stats-card {
+        border-radius: 12px;
+        background: white;
+        
+        .controls-header {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 16px;
+          font-weight: 600;
+          color: #333;
+          
+          mat-icon {
+            color: #667eea;
+          }
+        }
+        
+        .stats-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          
+          mat-icon {
+            color: #667eea;
+          }
+          
+          .stats-label {
+            font-weight: 500;
+            color: #666;
+          }
+          
+          .stats-value {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    
+    .viewer-section {
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      
+      mat-card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        margin: -16px -16px 16px -16px;
+        padding: 16px;
+        border-radius: 12px 12px 0 0;
+        
+        mat-card-title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 20px;
+          font-weight: 600;
+          margin: 0;
+          
+          mat-icon {
+            font-size: 24px;
+          }
+        }
+        
+        mat-card-subtitle {
+          color: rgba(255, 255, 255, 0.8);
+          margin: 4px 0 0 0;
+        }
+      }
+      
+      .viewer-content {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 16px;
+        min-height: 300px;
+        max-height: 70vh;
+        overflow-y: auto;
+        
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 4px;
+        }
+      }
+    }
+    
+    .welcome-section {
+      border-radius: 12px;
+      background: white;
+      text-align: center;
+      
+      .welcome-content {
+        padding: 48px 24px;
+        
+        .welcome-icon {
+          font-size: 72px;
+          color: #667eea;
+          margin-bottom: 24px;
+        }
+        
+        h2 {
+          color: #333;
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 16px;
+        }
+        
+        p {
+          color: #666;
+          font-size: 16px;
+          line-height: 1.6;
+          margin-bottom: 24px;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        .demo-note {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 12px 20px;
+          border-radius: 24px;
+          font-weight: 500;
+          
+          mat-icon {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .sprite-studio-container {
+    .header-toolbar {
+      .header-subtitle {
+        display: none;
+      }
+    }
+    
+    .main-content {
+      padding: 16px;
+      
+      .controls-section {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .welcome-section .welcome-content {
+        padding: 32px 16px;
+        
+        .welcome-icon {
+          font-size: 56px;
+        }
+        
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  .sprite-studio-container {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    
+    .upload-section,
+    .controls-card,
+    .stats-card,
+    .viewer-section,
+    .welcome-section {
+      background: #34495e;
+      color: white;
+    }
+    
+    .viewer-content {
+      background: #2c3e50;
+    }
+  }
+}
+
+// Custom Snackbar Styles
+::ng-deep {
+  .success-snackbar {
+    .mat-mdc-snack-bar-container {
+      --mdc-snackbar-container-color: #4caf50;
+      --mdc-snackbar-supporting-text-color: white;
+    }
+  }
+  
+  .error-snackbar {
+    .mat-mdc-snack-bar-container {
+      --mdc-snackbar-container-color: #f44336;
+      --mdc-snackbar-supporting-text-color: white;
+    }
+  }
+  
+  .info-snackbar {
+    .mat-mdc-snack-bar-container {
+      --mdc-snackbar-container-color: #2196f3;
+      --mdc-snackbar-supporting-text-color: white;
+    }
+  }
+}
