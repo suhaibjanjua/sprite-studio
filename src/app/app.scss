@@ -1,0 +1,23 @@
+// Version Info Footer
+.version-info {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 1000;
+  
+  .version-text {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

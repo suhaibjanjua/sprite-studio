@@ -1,8 +1,15 @@
 {
   "name": "sprite-studio",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A modern, professional SVG sprite viewer and management tool built with Angular 19",
-  "keywords": ["angular", "svg", "sprites", "material-design", "ngrx", "accessibility"],
+  "keywords": [
+    "angular",
+    "svg",
+    "sprites",
+    "material-design",
+    "ngrx",
+    "accessibility"
+  ],
   "author": {
     "name": "Suhaib Janjua",
     "email": "suhaib.janjua@gmail.com",
@@ -12,8 +19,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "prebuild": "node scripts/update-version.js",
     "build": "ng build",
+    "prebuild:prod": "node scripts/update-version.js",
     "build:prod": "ng build --configuration production",
+    "prebuild:dev": "node scripts/update-version.js",
     "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -24,7 +34,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "analyze": "ng build --stats-json && npx webpack-bundle-analyzer dist/sprite-studio/stats.json",
-    "serve:prod": "ng serve --configuration production"
+    "serve:prod": "ng serve --configuration production",
+    "version:update": "node scripts/update-version.js",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version"
   },
   "prettier": {
     "printWidth": 100,

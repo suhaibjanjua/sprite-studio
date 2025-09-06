@@ -1,6 +1,9 @@
 export const environment = {
   production: false,
   name: 'development',
+  version: '1.0.3',
+  buildNumber: '1757193466944',
+  buildTime: '2025-09-06T21:17:46.944Z',
   
   // API Configuration
   api: {
