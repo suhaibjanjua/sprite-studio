@@ -1,0 +1,164 @@
+.sprite-grid-container {
+  .icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        border-color: #667eea;
+      }
+      
+      .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        padding: 8px;
+        border-radius: 8px;
+        background: #f8f9fa;
+        min-height: 48px;
+        
+        .sprite-icon {
+          fill: #333;
+          transition: fill 0.3s ease;
+        }
+      }
+      
+      &:hover .sprite-icon {
+        fill: #667eea;
+      }
+      
+      .icon-label {
+        text-align: center;
+        width: 100%;
+        
+        span {
+          display: block;
+          font-weight: 500;
+          color: #333;
+          font-size: 12px;
+          margin-bottom: 4px;
+          word-break: break-word;
+        }
+        
+        small {
+          display: block;
+          color: #666;
+          font-size: 10px;
+          opacity: 0.8;
+        }
+      }
+      
+      &.actual-size {
+        .icons-grid {
+          grid-template-columns: repeat(auto-fit, minmax(80px, max-content));
+        }
+        
+        .icon-wrapper {
+          min-height: auto;
+          min-width: 48px;
+        }
+      }
+    }
+  }
+  
+  .no-icons-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+    color: #666;
+    
+    mat-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 0 8px 0;
+    }
+    
+    span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Fixed size mode specific styling
+.sprite-grid-container .icons-grid .icon-item.fixed-size {
+  .icon-wrapper {
+    width: 52px;
+    height: 52px;
+    
+    .sprite-icon {
+      max-width: 36px;
+      max-height: 36px;
+    }
+  }
+}
+
+// Actual size mode specific styling
+.sprite-grid-container .icons-grid .icon-item.actual-size {
+  grid-column: auto;
+  
+  .icon-wrapper {
+    width: auto;
+    height: auto;
+    min-width: 52px;
+    min-height: 52px;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .sprite-grid-container .icons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+    padding: 12px;
+    
+    .icon-item {
+      padding: 12px;
+      
+      .icon-label span {
+        font-size: 11px;
+      }
+      
+      .icon-label small {
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sprite-grid-container .icons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    
+    .icon-item {
+      padding: 8px;
+    }
+  }
+}
