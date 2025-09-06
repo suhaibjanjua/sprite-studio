@@ -1,11 +1,51 @@
-<form>
-	<mat-form-field appearance="fill">
-		<mat-label>SVG URL</mat-label>
-		<input matInput #urlInput type="url" placeholder="https://example.com/sprite.svg">
-	</mat-form-field>
-	<button mat-raised-button color="primary" type="button" (click)="onUrlSubmit(urlInput.value)">Load from URL</button>
-</form>
-<div style="margin-top: 16px;">
-	<input type="file" accept="image/svg+xml" (change)="onFileChange($event)">
-	<label>Upload sprite.svg</label>
+<div class="upload-form-container">
+  <!-- URL Input Section -->
+  <div class="url-section">
+    <mat-form-field appearance="outline" class="url-input">
+      <mat-label>SVG Sprite URL</mat-label>
+      <input matInput 
+             #urlInput
+             type="url"
+             placeholder="https://example.com/sprite.svg"
+             (keyup.enter)="onUrlSubmit(urlInput.value)">
+      <mat-icon matSuffix>link</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button 
+            color="primary" 
+            (click)="onUrlSubmit(urlInput.value)"
+            [disabled]="!urlInput.value"
+            class="url-button">
+      <mat-icon>cloud_download</mat-icon>
+      Load from URL
+    </button>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider-section">
+    <mat-divider></mat-divider>
+    <span class="divider-text">OR</span>
+    <mat-divider></mat-divider>
+  </div>
+
+  <!-- File Upload Section -->
+  <div class="file-section">
+    <input #fileInput 
+           type="file" 
+           accept="image/svg+xml,.svg"
+           (change)="onFileChange($event)"
+           style="display: none;">
+    
+    <button mat-raised-button 
+            color="accent"
+            (click)="fileInput.click()"
+            class="upload-button">
+      <mat-icon>upload_file</mat-icon>
+      Choose SVG File
+    </button>
+    
+    <div class="file-info" *ngIf="selectedFileName">
+      <mat-icon>description</mat-icon>
+      <span>{{ selectedFileName }}</span>
+    </div>
+  </div>
 </div>
