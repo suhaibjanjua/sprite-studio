@@ -1,16 +1,18 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-icon-toggle',
   templateUrl: './icon-toggle.html',
-  styleUrl: './icon-toggle.scss'
+  styleUrls: ['./icon-toggle.scss'],
+  imports: [MatButtonToggleModule, MatIconModule]
 })
 export class IconToggle {
-  viewMode: 'actual' | 'fixed' = 'actual';
-  @Output() modeChanged = new EventEmitter<'actual' | 'fixed'>();
+  @Input() currentMode: 'fixed' | 'actual' = 'fixed';
+  @Output() modeChanged = new EventEmitter<'fixed' | 'actual'>();
 
-  toggleMode() {
-    this.viewMode = this.viewMode === 'actual' ? 'fixed' : 'actual';
-    this.modeChanged.emit(this.viewMode);
+  onToggleChange(event: any) {
+    this.modeChanged.emit(event.value);
   }
 }
