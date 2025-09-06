@@ -1,3 +1,15 @@
-<button mat-button (click)="toggleMode()">
-	{{ viewMode === 'actual' ? 'Actual Size' : 'Fixed 40x40' }}
-</button>
+<div class="icon-toggle-container">
+  <mat-button-toggle-group 
+    [value]="currentMode" 
+    (change)="onToggleChange($event)"
+    appearance="standard">
+    <mat-button-toggle value="fixed" class="toggle-button">
+      <mat-icon>crop_free</mat-icon>
+      <span>Fixed Size</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="actual" class="toggle-button">
+      <mat-icon>aspect_ratio</mat-icon>
+      <span>Actual Size</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
