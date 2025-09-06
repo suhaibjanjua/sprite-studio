@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **Cache Busting System**
+  - Automated semantic versioning with patch increment on each build
+  - Version update script following MAJOR.MINOR.PATCH format
+  - Build metadata tracking with timestamp and build numbers
+  - Version display in application footer for build identification
+  - Output hashing configuration for Angular builds
+
+- **Version Management**
+  - Pre-build hooks for automatic version updates
+  - Manual version management scripts (patch, minor, major)
+  - Environment file integration with version tracking
+  - Index.html metadata updates for cache control
+
+### Changed
+- Project attribution updated to personal email (suhaib.janjua@gmail.com)
+- License changed from MIT to ISC
+- Enhanced package.json with comprehensive author information
+
+### Fixed
+- Git history rewritten to use correct personal email address
+- Semantic versioning compliance replacing timestamp-based versions
+
 ## [1.0.0] - 2025-09-07
 
 ### Added
