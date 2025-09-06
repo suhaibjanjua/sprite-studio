@@ -48,8 +48,16 @@ export class SpriteStudio {
     private snackBar: MatSnackBar,
     private performanceMonitor: PerformanceMonitorService
   ) {
+    console.log('🚀 SpriteStudio - Constructor');
+    console.log('🚀 Environment devTools:', environment.devTools);
+    console.log('🚀 showPerformanceMetrics:', this.showPerformanceMetrics);
+    
     this.icons = this.store.selectSignal(selectIcons);
     this.viewMode = this.store.selectSignal(selectViewMode);
+    
+    // Add a test metric to see if performance monitoring is working
+    this.performanceMonitor.addMetric('app-initialization', performance.now(), { component: 'SpriteStudio' });
+    
     this.loadDemoSprite();
   }
 

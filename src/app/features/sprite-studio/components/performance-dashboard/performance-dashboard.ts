@@ -115,14 +115,20 @@ interface PerformanceMetric {
   ]
 })
 export class PerformanceDashboard implements OnInit {
-  showMetrics = environment.devTools.showPerformanceMetrics;
+  showMetrics = environment.devTools?.showPerformanceMetrics || false;
   allMetrics: PerformanceMetric[] = [];
   recentMetrics: PerformanceMetric[] = [];
   displayedColumns: string[] = ['name', 'value', 'timestamp', 'metadata'];
 
-  constructor(private performanceMonitor: PerformanceMonitorService) {}
+  constructor(private performanceMonitor: PerformanceMonitorService) {
+    console.log('🎯 PerformanceDashboard - Constructor');
+    console.log('🎯 Environment devTools:', environment.devTools);
+    console.log('🎯 showMetrics:', this.showMetrics);
+  }
 
   ngOnInit() {
+    console.log('🎯 PerformanceDashboard - ngOnInit');
+    console.log('🎯 showMetrics in ngOnInit:', this.showMetrics);
     this.refreshMetrics();
     // Auto-refresh every 5 seconds
     setInterval(() => this.refreshMetrics(), 5000);
