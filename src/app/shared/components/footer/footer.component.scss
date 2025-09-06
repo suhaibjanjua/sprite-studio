@@ -1,0 +1,29 @@
+
+
+.app-footer {
+  width: 100%;
+  padding: 10px 0 8px 0;
+  text-align: center;
+  background: var(--mat-background, #fafafa);
+  color: var(--mat-primary-contrast, #333);
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-label {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  margin-right: 4px;
+}
+
+.footer-link {
+  color: var(--mat-primary, #1976d2);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: var(--mat-accent, #ff4081);
+  text-decoration: underline;
+}
