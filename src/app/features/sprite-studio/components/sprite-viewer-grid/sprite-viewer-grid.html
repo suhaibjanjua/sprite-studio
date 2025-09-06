@@ -1,8 +1,31 @@
-<div style="display: flex; flex-wrap: wrap;">
-	<div *ngFor="let icon of icons" style="margin: 5px;">
-		<div [ngStyle]="viewMode === 'fixed' ? { width: '40px', height: '40px' } : {}">
-			<div [innerHTML]="icon.svg"></div>
-			<div style="text-align: center; font-size: 10px;">{{ icon.id }}</div>
-		</div>
-	</div>
+<div class="sprite-grid-container">
+  <div class="icons-grid" *ngIf="icons.length > 0; else noIcons">
+    <div *ngFor="let icon of icons; trackBy: trackByIconId" 
+         class="icon-item"
+         [ngClass]="{'fixed-size': viewMode === 'fixed', 'actual-size': viewMode === 'actual'}">
+      <div class="icon-wrapper" 
+           [title]="icon.id"
+           matTooltip="{{icon.id}}"
+           matTooltipPosition="above">
+        <svg [attr.viewBox]="icon.viewBox" 
+             [style.width]="getIconWidth(icon)"
+             [style.height]="getIconHeight(icon)"
+             class="sprite-icon">
+          <use [attr.href]="'#' + icon.id"></use>
+        </svg>
+      </div>
+      <div class="icon-label">
+        <span>{{ icon.id }}</span>
+        <small *ngIf="viewMode === 'actual'">{{ icon.viewBox }}</small>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noIcons>
+    <div class="no-icons-message">
+      <mat-icon>image_not_supported</mat-icon>
+      <p>No icons to display</p>
+      <span>Upload an SVG sprite file to see the icons here</span>
+    </div>
+  </ng-template>
 </div>
