@@ -1,59 +1,155 @@
-# SpriteStudio
+# 🎨 SpriteStudio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+A modern, professional SVG sprite viewer and management tool built with Angular 19, featuring Material Design UI, NgRx state management, and comprehensive accessibility support.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-19-red)
+![Material Design](https://img.shields.io/badge/Material%20Design-Latest-blue)
+![NgRx](https://img.shields.io/badge/NgRx-Latest-purple)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)
 
-To start a local development server, run:
+## ✨ Features
 
+- 📁 **Dual Input Methods**: Upload SVG files or load from external URLs
+- 🔗 **CORS Handling**: Automatic proxy fallback for external sprites
+- 🎨 **Multiple View Modes**: Fixed size (36x36px) and actual size viewing
+- 📱 **Responsive Design**: Optimized for desktop and mobile devices
+- 🌙 **Dark Theme**: Automatic dark mode support
+- ♿ **Accessibility**: Full WCAG compliance with screen reader support
+- 🔄 **Real-time Updates**: Reactive state management with NgRx
+- 📊 **Live Statistics**: Icon count and metadata display
+- 🎯 **Performance Monitoring**: Built-in performance tracking
+- 🧪 **Comprehensive Testing**: Full testing utilities and framework
+
+## 🏗️ Architecture
+
+### Design Patterns
+- **Atomic Design**: Components organized as atoms, molecules, and organisms
+- **Feature-Based Architecture**: Modular structure for scalability
+- **Reactive Programming**: RxJS and NgRx for state management
+
+### Tech Stack
+- **Angular 19** with standalone components
+- **Angular Material** for UI components and theming
+- **NgRx** for predictable state management
+- **SCSS** with responsive design patterns
+- **TypeScript** with strict type checking
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Angular CLI 19+
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd sprite-studio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:4200/`
+
+## 📖 Usage
+
+### Upload Methods
+1. **File Upload**: Click "Choose SVG File" to upload from your computer
+2. **URL Input**: Enter an SVG sprite URL and click "Load from URL"
+
+### View Modes
+- **Fixed Size**: All icons displayed at 36x36px for consistency
+- **Actual Size**: Icons shown at their original dimensions
+
+### Supported Formats
+- Standard sprites with `<symbol>` elements
+- Sprites with `<defs><g>` structure
+- Any SVG with identifiable icon elements
+
+## 🛠️ Development
+
+### Available Scripts
 ```bash
-ng serve
+npm start          # Start development server
+npm run build      # Build for production
+npm run build:dev  # Build for development
+npm test          # Run unit tests
+npm run e2e       # Run end-to-end tests
+npm run lint      # Run ESLint
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+### Project Structure
+```
+src/
+├── app/
+│   ├── features/sprite-studio/    # Main feature module
+│   │   ├── components/           # Atomic components
+│   │   ├── services/            # Business logic
+│   │   ├── store/              # NgRx state management
+│   │   └── sprite-studio/      # Main container
+│   ├── shared/                 # Shared utilities
+│   └── core/                  # Core services
+├── environments/              # Environment configs
+└── styles.scss               # Global styles
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Code Standards
+- Follow Angular style guide
+- Use conventional commits
+- Maintain 90%+ test coverage
+- Ensure accessibility compliance
 
-```bash
-ng generate --help
-```
+## 🧪 Testing
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Unit Tests
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### E2E Tests
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Testing Utilities
+The project includes comprehensive testing utilities in `src/app/shared/testing/`
 
-## Additional Resources
+## 🚀 Deployment
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Production Build
+```bash
+ng build --configuration production
+```
+
+### Environment Configuration
+Configure API endpoints and features in `src/environments/`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Follow conventional commit format
+4. Add tests for new features
+5. Ensure accessibility compliance
+6. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Angular team for the excellent framework
+- Material Design for the beautiful UI components
+- NgRx team for state management solutions
