@@ -1,12 +1,26 @@
 {
   "name": "sprite-studio",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A modern, professional SVG sprite viewer and management tool built with Angular 19",
+  "keywords": ["angular", "svg", "sprites", "material-design", "ngrx", "accessibility"],
+  "author": "SpriteStudio Team",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "analyze": "ng build --stats-json && npx webpack-bundle-analyzer dist/sprite-studio/stats.json",
+    "serve:prod": "ng serve --configuration production"
   },
   "prettier": {
     "printWidth": 100,
