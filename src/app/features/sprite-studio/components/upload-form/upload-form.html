@@ -1,0 +1,11 @@
+<form>
+	<mat-form-field appearance="fill">
+		<mat-label>SVG URL</mat-label>
+		<input matInput #urlInput type="url" placeholder="https://example.com/sprite.svg">
+	</mat-form-field>
+	<button mat-raised-button color="primary" type="button" (click)="onUrlSubmit(urlInput.value)">Load from URL</button>
+</form>
+<div style="margin-top: 16px;">
+	<input type="file" accept="image/svg+xml" (change)="onFileChange($event)">
+	<label>Upload sprite.svg</label>
+</div>

@@ -1,0 +1,8 @@
+<div style="display: flex; flex-wrap: wrap;">
+	<div *ngFor="let icon of icons" style="margin: 5px;">
+		<div [ngStyle]="viewMode === 'fixed' ? { width: '40px', height: '40px' } : {}">
+			<div [innerHTML]="icon.svg"></div>
+			<div style="text-align: center; font-size: 10px;">{{ icon.id }}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<div style="padding: 24px;">
+  <app-upload-form (fileSelected)="onFileSelected($event)" (urlEntered)="onUrlEntered($event)"></app-upload-form>
+  <app-icon-toggle (modeChanged)="onModeChanged($event)"></app-icon-toggle>
+  <app-sprite-viewer-grid [icons]="icons()" [viewMode]="viewMode()"></app-sprite-viewer-grid>
+</div>
